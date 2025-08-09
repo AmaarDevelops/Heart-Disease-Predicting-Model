@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Heart Disease Predictor</title>
+        <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+    </head>
+    <body>
+        <h1>Heart Disease Prediction ❤️ </h1>
+        <form method="POST">
+            {% for col in columns %}
+            <label>{{ col }}</label>
+            <input type="number" step="any" name="{{ col }}" required/>
+            <Br>
+            {% endfor %}
+            <button type="submit">Predict</button>
+        </form>
+        {% if result %}
+        <p class="result">{{ result }}</p>
+        {% endif %}
+    </body>
+
+
+
+</html>
